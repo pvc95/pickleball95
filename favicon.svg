@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Pickleball Vexin Centre">
-  <rect width="32" height="32" rx="6" fill="#14203a"/>
-  <circle cx="16" cy="16" r="11" fill="#d6e548"/>
-  <g fill="#14203a">
-    <circle cx="16" cy="9.6" r="2.05"/>
-    <circle cx="21.7" cy="13.5" r="2.05"/>
-    <circle cx="19.5" cy="20.3" r="2.05"/>
-    <circle cx="12.5" cy="20.3" r="2.05"/>
-    <circle cx="10.3" cy="13.5" r="2.05"/>
+  <rect width="32" height="32" rx="6" fill="#118baa"/>
+  <circle cx="16" cy="16" r="12.2" fill="#333333"/>
+  <circle cx="16" cy="16" r="11.05" fill="#fdf109"/>
+  <g fill="#333333">
+    <circle cx="16" cy="9.7" r="2"/>
+    <circle cx="21.99" cy="14.05" r="2"/>
+    <circle cx="19.7" cy="21.1" r="2"/>
+    <circle cx="12.3" cy="21.1" r="2"/>
+    <circle cx="10.01" cy="14.05" r="2"/>
   </g>
 </svg>
