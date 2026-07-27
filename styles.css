@@ -64,9 +64,11 @@ a:hover { color: var(--nuit); }
 
 .bloc { padding-block: clamp(3.2rem, 7vw, 6rem); }
 .bloc--nuit { background: var(--nuit); color: var(--craie); }
-.bloc--nuit a { color: var(--balle); }
+/* :not(.bouton) — sinon cette regle (0,1,1) battait .bouton (0,1,0)
+   et les boutons heritaient de la couleur des liens : jaune sur jaune. */
+.bloc--nuit a:not(.bouton) { color: var(--balle); }
 .bloc--court { background: var(--court); color: #fff; }
-.bloc--court a { color: #fff; }
+.bloc--court a:not(.bouton) { color: #fff; }
 
 .saut-contenu {
   position: absolute;
