@@ -6,11 +6,26 @@
 <title>Pickleball Vexin Centre — jouer au pickleball dans le Vexin (95)</title>
 <meta name="description" content="Club de pickleball affilié FFT dans le Vexin. Trois créneaux par semaine à Vigny, Chars et Marines. Inscriptions saison 2026/2027 ouvertes.">
 <link rel="canonical" href="https://pickleball95.com/">
-<meta property="og:title" content="Pickleball Vexin Centre">
-<meta property="og:description" content="Trois gymnases, trois soirs par semaine, dans le Vexin. Club affilié FFT.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://pickleball95.com/">
-<meta property="og:locale" content="fr_FR">
+<link rel="alternate" hreflang="fr" href="https://pickleball95.com/">
+<link rel="alternate" hreflang="en" href="https://pickleball95.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://pickleball95.com/">
+<script>
+(function () {
+  try {
+    if (new URLSearchParams(location.search).has('lang')) return;
+    if (document.referrer && new URL(document.referrer).host === location.host) return;
+    var prefs = navigator.languages || [navigator.language || ''];
+    for (var i = 0; i < prefs.length; i++) {
+      var tag = String(prefs[i]).toLowerCase();
+      if (tag.indexOf('fr') === 0) return;
+      if (tag.indexOf('en') === 0) {
+        location.replace('en/' + location.search + location.hash);
+        return;
+      }
+    }
+  } catch (e) {}
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
@@ -26,14 +41,23 @@
       <svg class="balle" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><circle cx="12" cy="5.6" r="1.5"/><circle cx="17.3" cy="9" r="1.5"/><circle cx="17.3" cy="15" r="1.5"/><circle cx="12" cy="18.4" r="1.5"/><circle cx="6.7" cy="15" r="1.5"/><circle cx="6.7" cy="9" r="1.5"/><circle cx="12" cy="12" r="1.5"/></svg>
       <span>Pickleball Vexin Centre<small>Val-d'Oise · Affilié FFT</small></span>
     </a>
-    <nav class="nav" aria-label="Navigation principale">
-      <ul>
-        <li><a href="index.html" aria-current="page">Accueil</a></li>
-        <li><a href="ou-jouer.html">Où jouer</a></li>
-        <li><a href="adherer.html">Adhérer</a></li>
-        <li><a href="le-club.html">Le club</a></li>
-      </ul>
-    </nav>
+    <div class="entete__droite">
+      <nav class="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html" aria-current="page">Accueil</a></li>
+          <li><a href="ou-jouer.html">Où jouer</a></li>
+          <li><a href="adherer.html">Adhérer</a></li>
+          <li><a href="le-club.html">Le club</a></li>
+        </ul>
+      </nav>
+      <details class="langue">
+      <summary aria-label="Choisir la langue"><svg class="drapeau" viewBox="0 0 21 15" aria-hidden="true"><rect width="7" height="15" fill="#002654"/><rect x="7" width="7" height="15" fill="#f5f5f5"/><rect x="14" width="7" height="15" fill="#ce1126"/></svg><span>FR</span></summary>
+      <div class="langue__menu">
+        <a href="index.html" hreflang="fr" lang="fr" aria-current="true"><svg class="drapeau" viewBox="0 0 21 15" aria-hidden="true"><rect width="7" height="15" fill="#002654"/><rect x="7" width="7" height="15" fill="#f5f5f5"/><rect x="14" width="7" height="15" fill="#ce1126"/></svg>Français</a>
+        <a href="en/index.html" hreflang="en" lang="en"><svg class="drapeau" viewBox="0 0 21 15" aria-hidden="true"><rect width="21" height="15" fill="#f5f5f5"/><g fill="#b31942"><rect y="0.0000" width="21" height="1.1538"/><rect y="2.3077" width="21" height="1.1538"/><rect y="4.6154" width="21" height="1.1538"/><rect y="6.9231" width="21" height="1.1538"/><rect y="9.2308" width="21" height="1.1538"/><rect y="11.5385" width="21" height="1.1538"/><rect y="13.8462" width="21" height="1.1538"/></g><rect width="8.4" height="8.0769" fill="#0a3161"/></svg>English</a>
+      </div>
+    </details>
+    </div>
   </div>
 </header>
 
@@ -43,15 +67,14 @@
     <div class="enveloppe">
       <div class="heros__texte">
         <p class="sourcil">
-          <svg class="balle" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><circle cx="12" cy="5.6" r="1.5"/><circle cx="17.3" cy="9" r="1.5"/><circle cx="17.3" cy="15" r="1.5"/><circle cx="12" cy="18.4" r="1.5"/><circle cx="6.7" cy="15" r="1.5"/><circle cx="6.7" cy="9" r="1.5"/><circle cx="12" cy="12" r="1.5"/></svg>
-          Saison 2026 / 2027
-        </p>
+        <svg class="balle" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><circle cx="12" cy="5.6" r="1.5"/><circle cx="17.3" cy="9" r="1.5"/><circle cx="17.3" cy="15" r="1.5"/><circle cx="12" cy="18.4" r="1.5"/><circle cx="6.7" cy="15" r="1.5"/><circle cx="6.7" cy="9" r="1.5"/><circle cx="12" cy="12" r="1.5"/></svg>
+        Saison 2026 / 2027
+      </p>
         <h1>Trois gymnases, trois soirs par semaine. <em>Le pickleball dans le Vexin.</em></h1>
         <p class="intro">Une raquette, une balle ajourée, un filet bas et un terrain trois fois plus petit qu'un court de tennis. On apprend en une séance, on y revient toute l'année.</p>
       </div>
     </div>
 
-    <!-- Signature : la semaine du club, en trois blocs -->
     <div class="enveloppe">
       <div class="semaine">
         <a class="jour" href="ou-jouer.html#vigny">
@@ -93,9 +116,9 @@
     <div class="enveloppe duo">
       <div>
         <p class="sourcil">
-          <svg class="balle" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><circle cx="12" cy="5.6" r="1.5"/><circle cx="17.3" cy="9" r="1.5"/><circle cx="17.3" cy="15" r="1.5"/><circle cx="12" cy="18.4" r="1.5"/><circle cx="6.7" cy="15" r="1.5"/><circle cx="6.7" cy="9" r="1.5"/><circle cx="12" cy="12" r="1.5"/></svg>
-          Vous avez dit pickleball ?
-        </p>
+        <svg class="balle" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><circle cx="12" cy="5.6" r="1.5"/><circle cx="17.3" cy="9" r="1.5"/><circle cx="17.3" cy="15" r="1.5"/><circle cx="12" cy="18.4" r="1.5"/><circle cx="6.7" cy="15" r="1.5"/><circle cx="6.7" cy="9" r="1.5"/><circle cx="12" cy="12" r="1.5"/></svg>
+        Vous avez dit pickleball ?
+      </p>
         <h2>C'est quoi, au juste</h2>
         <p>Un mélange de tennis, de badminton et de ping-pong, qui se joue surtout en double sur un terrain de badminton. La balle est en plastique perforé, la raquette est pleine, et la vitesse de jeu se règle d'elle-même : on peut échanger tranquillement ou frapper très fort.</p>
         <ul class="faits">
@@ -149,7 +172,7 @@
         <h3>Le site</h3>
         <ul>
           <li><a href="ou-jouer.html">Où jouer</a></li>
-          <li><a href="adherer.html">Adhérer ou se réinscrire</a></li>
+          <li><a href="adherer.html">Adhérer</a></li>
           <li><a href="le-club.html">Le club</a></li>
         </ul>
       </div>
@@ -175,5 +198,19 @@
   </div>
 </footer>
 
+<script>
+document.addEventListener('click', function (e) {
+  document.querySelectorAll('details.langue[open]').forEach(function (d) {
+    if (!d.contains(e.target)) d.removeAttribute('open');
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('details.langue[open]').forEach(function (d) {
+      d.removeAttribute('open');
+    });
+  }
+});
+</script>
 </body>
 </html>

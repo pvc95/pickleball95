@@ -535,3 +535,90 @@ p { margin: 0 0 1.15em; max-width: 62ch; }
   color: var(--encre);
 }
 .social--clair a:hover { border-color: var(--court); color: var(--court); }
+
+/* --- selecteur de langue -------------------------------------------------- */
+
+.entete__droite {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.9rem, 3vw, 2rem);
+  flex-wrap: wrap;
+}
+
+.drapeau {
+  flex: 0 0 auto;
+  width: 1.4em;
+  height: auto;
+  display: block;
+  border-radius: 1px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.langue { position: relative; }
+
+.langue > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--data);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--craie);
+  border: 1px solid rgba(245, 243, 237, 0.3);
+  border-radius: var(--rayon);
+  padding: 0.38rem 0.6rem;
+}
+.langue > summary::-webkit-details-marker { display: none; }
+.langue > summary::after {
+  content: "";
+  width: 0.36em;
+  height: 0.36em;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translate(-0.08em, -0.08em);
+}
+.langue[open] > summary::after { transform: rotate(225deg) translate(-0.02em, -0.02em); }
+.langue > summary:hover { border-color: var(--balle); color: var(--balle); }
+
+.langue__menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.5rem);
+  z-index: 40;
+  min-width: 11.5rem;
+  background: var(--craie);
+  border: 2px solid var(--encre);
+  border-radius: var(--rayon);
+  box-shadow: 5px 5px 0 rgba(12, 20, 37, 0.5);
+  overflow: hidden;
+}
+.langue__menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.68rem 0.9rem;
+  text-decoration: none;
+  color: var(--encre);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.langue__menu a + a { border-top: 1px solid rgba(16, 24, 40, 0.14); }
+.langue__menu a:hover { background: var(--balle); color: var(--encre); }
+.langue__menu a[aria-current="true"] { font-weight: 600; }
+.langue__menu a[aria-current="true"]::after {
+  content: "";
+  margin-left: auto;
+  width: 0.42em;
+  height: 0.75em;
+  border-right: 2px solid var(--court);
+  border-bottom: 2px solid var(--court);
+  transform: rotate(45deg) translateY(-0.15em);
+}
+
+@media (max-width: 560px) {
+  .entete__interieur { gap: 0.9rem; }
+  .entete__droite { width: 100%; justify-content: space-between; }
+}
