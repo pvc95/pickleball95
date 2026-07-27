@@ -622,3 +622,26 @@ p { margin: 0 0 1.15em; max-width: 62ch; }
   .entete__interieur { gap: 0.9rem; }
   .entete__droite { width: 100%; justify-content: space-between; }
 }
+
+/* --- logo du club --------------------------------------------------------- */
+
+.marque__logo {
+  flex: 0 0 auto;
+  width: auto;
+  height: 2.95em;
+  display: block;
+}
+
+.pied__marque {
+  margin: 0 0 1.1rem;
+  line-height: 0;
+}
+.pied__marque img {
+  width: min(100%, 168px);
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 420px) {
+  .marque__logo { height: 2.5em; }
+}
