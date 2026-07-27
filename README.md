@@ -47,6 +47,14 @@ Pour chacune des deux pages (`tournoi-k100.html` et `en/k100-tournament.html`) :
 5. `robots.txt` : supprimer les deux lignes `Disallow`
 6. `sitemap.xml` : ajouter les deux URL
 
+## Affiliation FFT : à ne pas remettre sans validation
+
+Toute mention d'une affiliation à la Fédération française de tennis a été **retirée du site** : elle n'est pas officielle et le club ne communique pas dessus. Les pages ne parlent donc que du mécanisme concret — compte Ten'Up, licence, paiement HelloAsso — sans revendiquer de statut.
+
+Les deux pages tournoi portent un commentaire `TODO` au niveau de la catégorie K100 : l'homologation ne doit être mentionnée qu'une fois officielle.
+
+Quand l'affiliation sera actée, les endroits à reprendre sont : le sous-titre de l'en-tête, la phrase d'introduction du pied de page, les descriptions `<meta>` de l'accueil et de la page club, l'introduction de la page adhésion, et la section « Ce qui change cette saison ». Dans les deux langues.
+
 ## Reste à compléter
 
 Chercher `TODO` dans les fichiers. Points ouverts :
