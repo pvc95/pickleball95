@@ -1,0 +1,535 @@
+/* ==========================================================================
+   Pickleball Vexin Centre — feuille de style unique
+   Palette : gymnase le soir. Indigo profond (la nuit dehors), parquet érable
+   (le sol de jeu), jaune optique (la balle ajourée), sarcelle (le tracé).
+   ========================================================================== */
+
+:root {
+  --nuit:        #14203a;
+  --nuit-fonce:  #0c1425;
+  --nuit-clair:  #24345a;
+  --parquet:     #e9d7b2;
+  --parquet-sbr: #d9c193;
+  --balle:       #d6e548;
+  --court:       #2b7c8c;
+  --craie:       #f5f3ed;
+  --encre:       #101828;
+  --gris:        #6d7789;
+
+  --pad-page: clamp(1.15rem, 4vw, 3.5rem);
+  --max: 1180px;
+  --rayon: 3px;
+
+  --display: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  --corps: "Inter Tight", system-ui, -apple-system, sans-serif;
+  --data: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--craie);
+  color: var(--encre);
+  font-family: var(--corps);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.09rem);
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, iframe { max-width: 100%; border: 0; }
+
+a { color: var(--court); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--nuit); }
+
+:focus-visible {
+  outline: 3px solid var(--balle);
+  outline-offset: 3px;
+}
+
+/* --- primitives de mise en page ------------------------------------------ */
+
+.enveloppe {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--pad-page);
+}
+
+.bloc { padding-block: clamp(3.2rem, 7vw, 6rem); }
+.bloc--nuit { background: var(--nuit); color: var(--craie); }
+.bloc--nuit a { color: var(--balle); }
+.bloc--court { background: var(--court); color: #fff; }
+.bloc--court a { color: #fff; }
+
+.saut-contenu {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--balle);
+  color: var(--encre);
+  padding: 0.7rem 1.1rem;
+  font-weight: 600;
+  z-index: 50;
+}
+.saut-contenu:focus { left: 0.6rem; top: 0.6rem; }
+
+/* --- typographie --------------------------------------------------------- */
+
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.6em;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(2.3rem, 1.3rem + 4.6vw, 4.4rem); }
+h2 { font-size: clamp(1.75rem, 1.1rem + 2.5vw, 2.9rem); }
+h3 { font-size: clamp(1.2rem, 1.02rem + 0.8vw, 1.55rem); }
+
+p { margin: 0 0 1.15em; max-width: 62ch; }
+.intro { font-size: clamp(1.08rem, 1rem + 0.5vw, 1.3rem); color: var(--gris); }
+.bloc--nuit .intro { color: var(--parquet); }
+
+.sourcil {
+  font-family: var(--data);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--court);
+  margin: 0 0 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.bloc--nuit .sourcil { color: var(--balle); }
+.bloc--court .sourcil { color: var(--parquet); }
+
+/* --- la balle ajourée : motif récurrent ---------------------------------- */
+
+.balle {
+  flex: 0 0 auto;
+  width: 1.05em;
+  height: 1.05em;
+  color: var(--balle);
+}
+.balle circle:first-child { fill: currentColor; }
+.balle circle + circle { fill: var(--nuit); }
+.bloc--nuit .balle circle + circle { fill: var(--nuit); }
+
+/* --- boutons ------------------------------------------------------------- */
+
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--corps);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.95rem 1.5rem;
+  border: 2px solid var(--encre);
+  border-radius: var(--rayon);
+  background: var(--balle);
+  color: var(--encre);
+  text-decoration: none;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+  box-shadow: 4px 4px 0 var(--encre);
+}
+.bouton:hover {
+  color: var(--encre);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--encre);
+}
+.bouton:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--encre); }
+
+.bouton--fantome {
+  background: transparent;
+  border-color: currentColor;
+  box-shadow: none;
+  color: inherit;
+}
+.bouton--fantome:hover { background: rgba(214, 229, 72, 0.16); box-shadow: none; color: inherit; }
+
+.rangee-boutons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1rem;
+  align-items: center;
+  margin-top: 1.8rem;
+}
+
+/* --- en-tête ------------------------------------------------------------- */
+
+.entete {
+  background: var(--nuit);
+  color: var(--craie);
+  border-bottom: 1px solid var(--nuit-clair);
+}
+.entete__interieur {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 72px;
+  flex-wrap: wrap;
+  padding-block: 0.8rem;
+}
+.marque {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.06rem;
+  letter-spacing: -0.02em;
+  color: var(--craie);
+  text-decoration: none;
+  line-height: 1.15;
+}
+.marque:hover { color: var(--balle); }
+.marque .balle { width: 1.6em; height: 1.6em; }
+.marque span { display: block; }
+.marque small {
+  display: block;
+  font-family: var(--data);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--parquet-sbr);
+}
+
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.55rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--craie);
+  text-decoration: none;
+  padding-block: 0.3rem;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover { color: var(--balle); border-bottom-color: var(--balle); }
+.nav a[aria-current="page"] { color: var(--balle); border-bottom-color: var(--balle); }
+
+/* --- héros --------------------------------------------------------------- */
+
+.heros {
+  background: var(--nuit);
+  color: var(--craie);
+  padding-block: clamp(2.8rem, 6vw, 5rem) 0;
+  overflow: hidden;
+}
+.heros h1 { max-width: 22ch; }
+.heros h1 em {
+  font-style: normal;
+  color: var(--balle);
+}
+.heros__texte { max-width: 46rem; }
+.heros .intro { max-width: 44ch; }
+
+/* La semaine : signature du site ----------------------------------------- */
+
+.semaine {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--nuit-clair);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--nuit-clair);
+}
+.jour {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.6rem 1.3rem 1.8rem;
+  background: var(--nuit);
+  color: var(--craie);
+  text-decoration: none;
+  transition: background 0.16s ease;
+}
+.jour:hover, .jour:focus-visible { background: var(--nuit-clair); color: var(--craie); }
+.jour__abrege {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 1rem + 6vw, 4.6rem);
+  line-height: 0.85;
+  letter-spacing: -0.045em;
+  color: var(--balle);
+}
+.jour__heure {
+  font-family: var(--data);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--parquet);
+}
+.jour__lieu { font-weight: 600; font-size: 1.02rem; }
+.jour__ville {
+  font-family: var(--data);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gris);
+}
+
+@media (max-width: 680px) {
+  .semaine { grid-template-columns: 1fr; }
+  .jour {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1.1rem;
+    padding: 1.1rem 1.3rem;
+    flex-wrap: wrap;
+  }
+  .jour__abrege { font-size: 2.5rem; flex: 0 0 3.4em; }
+  .jour__corps { flex: 1 1 10rem; }
+}
+
+/* --- bandeau d'alerte / saison ------------------------------------------- */
+
+.bandeau {
+  background: var(--balle);
+  color: var(--encre);
+  border-block: 2px solid var(--encre);
+}
+.bandeau__interieur {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.1rem 2rem;
+  padding-block: 1.4rem;
+}
+.bandeau p { margin: 0; max-width: 52ch; font-weight: 500; }
+.bandeau strong { font-family: var(--display); font-weight: 800; }
+.bandeau .bouton { background: var(--nuit); color: var(--craie); border-color: var(--encre); }
+.bandeau .bouton:hover { color: var(--balle); }
+
+/* --- grilles génériques -------------------------------------------------- */
+
+.grille {
+  display: grid;
+  gap: clamp(1.3rem, 3vw, 2.2rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+}
+.grille--2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); }
+
+.duo {
+  display: grid;
+  gap: clamp(1.8rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 900px) {
+  .duo { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); align-items: start; }
+}
+
+/* --- carte gymnase (surface parquet) ------------------------------------- */
+
+.gymnase {
+  background: var(--parquet);
+  border: 2px solid var(--encre);
+  border-radius: var(--rayon);
+  padding: 1.5rem 1.5rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.gymnase__jour {
+  font-family: var(--data);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--court);
+  margin-bottom: 0.5rem;
+}
+.gymnase h3 { margin-bottom: 0.35rem; }
+.gymnase__creneau {
+  font-family: var(--data);
+  font-size: 1.22rem;
+  font-weight: 500;
+  color: var(--encre);
+  padding: 0.35rem 0 0.7rem;
+}
+.gymnase address {
+  font-style: normal;
+  color: #4a4433;
+  font-size: 0.97rem;
+  margin-bottom: 1.1rem;
+}
+.gymnase .bouton { margin-top: auto; align-self: flex-start; background: var(--craie); }
+
+/* --- étapes numérotées (séquence réelle) --------------------------------- */
+
+.etapes { list-style: none; margin: 2rem 0 0; padding: 0; counter-reset: etape; }
+.etape {
+  counter-increment: etape;
+  display: grid;
+  grid-template-columns: 3.1rem minmax(0, 1fr);
+  gap: 0 1.15rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(16, 24, 40, 0.14);
+}
+.etape:last-child { border-bottom: 1px solid rgba(16, 24, 40, 0.14); }
+.etape::before {
+  content: counter(etape, decimal-leading-zero);
+  font-family: var(--data);
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--court);
+  padding-top: 0.28rem;
+}
+.etape h3 { margin-bottom: 0.35rem; }
+.etape p:last-child { margin-bottom: 0; }
+.bloc--nuit .etape { border-color: rgba(245, 243, 237, 0.18); }
+.bloc--nuit .etape::before { color: var(--balle); }
+
+/* --- vidéos -------------------------------------------------------------- */
+
+.video {
+  margin: 0;
+  border: 2px solid var(--encre);
+  border-radius: var(--rayon);
+  overflow: hidden;
+  background: var(--nuit-fonce);
+}
+.video__cadre { position: relative; aspect-ratio: 16 / 9; }
+.video__cadre iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+.video figcaption {
+  font-family: var(--data);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+  background: var(--craie);
+  border-top: 2px solid var(--encre);
+  color: var(--encre);
+}
+
+/* --- liste de faits ------------------------------------------------------ */
+
+.faits { list-style: none; margin: 1.6rem 0 0; padding: 0; }
+.faits li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.55rem 0;
+  max-width: 60ch;
+}
+.faits .balle { margin-top: 0.42em; }
+
+/* --- tableau d'infos ----------------------------------------------------- */
+
+.fiche { border-collapse: collapse; width: 100%; max-width: 40rem; margin-top: 1.6rem; }
+.fiche th, .fiche td {
+  text-align: left;
+  padding: 0.85rem 1rem 0.85rem 0;
+  border-bottom: 1px solid rgba(245, 243, 237, 0.2);
+  vertical-align: top;
+}
+.fiche th {
+  font-family: var(--data);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--balle);
+  width: 11rem;
+  white-space: nowrap;
+}
+.fiche td { font-size: 1.05rem; }
+
+/* --- encart brouillon (page non publiée) --------------------------------- */
+
+.brouillon {
+  background: repeating-linear-gradient(
+    45deg, #fff4c2, #fff4c2 14px, #ffe98a 14px, #ffe98a 28px
+  );
+  border: 2px solid var(--encre);
+  border-radius: var(--rayon);
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 2.4rem;
+  color: var(--encre);
+  font-weight: 500;
+}
+.brouillon p { margin: 0; max-width: 70ch; }
+
+/* --- pied de page -------------------------------------------------------- */
+
+.pied {
+  background: var(--nuit-fonce);
+  color: var(--parquet-sbr);
+  padding-block: clamp(2.6rem, 5vw, 4rem) 2rem;
+  font-size: 0.95rem;
+}
+.pied h2 { color: var(--craie); font-size: 1.4rem; }
+.pied a { color: var(--craie); }
+.pied a:hover { color: var(--balle); }
+.pied__grille {
+  display: grid;
+  gap: 2rem clamp(2rem, 5vw, 4rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  padding-bottom: 2.2rem;
+  border-bottom: 1px solid rgba(245, 243, 237, 0.15);
+}
+.pied h3 {
+  font-family: var(--data);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--balle);
+  margin-bottom: 0.9rem;
+}
+.pied ul { list-style: none; margin: 0; padding: 0; }
+.pied li { padding: 0.28rem 0; }
+.pied__bas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.6rem;
+  justify-content: space-between;
+  padding-top: 1.6rem;
+  font-family: var(--data);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: var(--gris);
+}
+.social { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+.social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid rgba(245, 243, 237, 0.3);
+  border-radius: var(--rayon);
+  padding: 0.5rem 0.85rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.social a:hover { border-color: var(--balle); }
+
+/* --- correctifs de contraste --------------------------------------------- */
+
+.bloc--court .intro { color: rgba(255, 255, 255, 0.9); }
+
+.social--clair a {
+  border-color: rgba(16, 24, 40, 0.28);
+  color: var(--encre);
+}
+.social--clair a:hover { border-color: var(--court); color: var(--court); }

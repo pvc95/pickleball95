@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Page en préparation, non publiée
+Disallow: /tournoi-k100.html
+
+Sitemap: https://pickleball95.com/sitemap.xml
