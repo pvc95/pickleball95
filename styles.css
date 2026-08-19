@@ -645,3 +645,27 @@ p { margin: 0 0 1.15em; max-width: 62ch; }
 @media (max-width: 420px) {
   .marque__logo { height: 2.5em; }
 }
+
+/* --- tableau sur fond clair (tarifs du tournoi) --------------------------- */
+
+.fiche--clair { max-width: 46rem; }
+.fiche--clair th,
+.fiche--clair td { border-bottom-color: rgba(16, 24, 40, 0.14); }
+.fiche--clair th {
+  width: auto;
+  white-space: normal;
+  font-family: var(--corps);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--encre);
+  padding-right: 1.5rem;
+}
+.fiche--clair td {
+  font-family: var(--data);
+  font-size: 0.95rem;
+  color: var(--gris);
+  white-space: nowrap;
+}
+.fiche--clair td:last-child { color: var(--encre); font-weight: 500; }

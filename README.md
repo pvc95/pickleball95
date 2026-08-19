@@ -10,7 +10,7 @@ Site statique bilingue français / anglais. Pas de build, pas de dépendance : d
 | `ou-jouer.html` | `en/where-to-play.html` | publiée |
 | `adherer.html` | `en/join.html` | publiée |
 | `le-club.html` | `en/the-club.html` | publiée |
-| `tournoi-k100.html` | `en/k100-tournament.html` | **non publiées** — hors menus, `noindex`, exclues de `robots.txt` |
+| `tournoi-k100.html` | `en/k100-tournament.html` | publiée — inscriptions ouvertes sur HelloAsso |
 
 `styles.css` est partagé par les onze pages : une modification de style se répercute partout.
 
@@ -36,25 +36,21 @@ Tout est éditable sur github.com : ouvrir le fichier, cliquer sur le crayon, va
 
 Si vous ajoutez une page, pensez aux trois balises `<link rel="alternate" hreflang="…">` dans le `<head>`, aux liens du sélecteur de langue, et à `sitemap.xml`.
 
-## Publier les pages tournoi
+## Le tournoi K100
 
-Pour chacune des deux pages (`tournoi-k100.html` et `en/k100-tournament.html`) :
+Les deux pages sont publiées depuis l'ouverture de la billetterie. Informations à tenir à jour si elles changent :
 
-1. Supprimer `<meta name="robots" content="noindex, nofollow">`
-2. Supprimer le bloc `<div class="brouillon">…</div>`
-3. Ajouter les trois balises `hreflang` du couple de pages
-4. Ajouter l'entrée dans le `<nav>` des quatre autres pages de la même langue
-5. `robots.txt` : supprimer les deux lignes `Disallow`
-6. `sitemap.xml` : ajouter les deux URL
+- lien HelloAsso, présent sur les deux pages tournoi **et** sur les deux pages d'accueil
+- tableaux et tarifs : le tableau « Tableaux et tarifs »
+- la règle FFT du tableau unique par jour, et le lien de création DUPR
+
+Après le 4 octobre 2026, il faudra soit archiver ces pages, soit les remplacer par un compte rendu. Ne pas les laisser annoncer des inscriptions closes.
 
 ## Reste à compléter
 
 Chercher `TODO` dans les fichiers. Points ouverts :
 
 - adresse e-mail de contact réellement créée dans Google Workspace
-- adresse exacte et nom officiel du site du comité à Cergy
-- tableaux, tarif d'engagement et lien d'inscription du K100
-- formulation du format K100 à recaler sur le règlement FFT
 - vérifier que les créneaux et les règles d'accès aux gymnases sont toujours exacts
 - les deux vidéos de la page d'accueil sont en français : la version anglaise le signale, mais une vidéo anglophone serait mieux
 
