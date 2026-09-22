@@ -86,3 +86,11 @@ Pour le retirer définitivement, ou pour le réutiliser pour un autre évènemen
 - les styles `.alerte` restent dans `styles.css` et peuvent servir à nouveau
 
 Après le tournoi, il reste à traiter séparément les deux pages `tournoi-k100.html` et `en/k100-tournament.html`, qui continueront d'annoncer des inscriptions ouvertes.
+
+## Icônes des réseaux sociaux
+
+Les icônes Facebook et Instagram de l'en-tête et du pied de page utilisent les **tracés officiels** des chartes de marque de Meta, extraits du paquet `simple-icons`. Elles ne doivent pas être redessinées ni déformées : les chartes de Meta l'interdisent.
+
+Elles sont affichées en monochrome, ce que les deux chartes autorisent explicitement lorsque le support ne permet pas la couleur de marque — ici un en-tête bleu nuit. Les couleurs officielles, si besoin un jour : Facebook `#0866FF`, Instagram `#FF0069`.
+
+Pour les mettre à jour : `npm install simple-icons`, puis récupérer `siFacebook.path` et `siInstagram.path`.
