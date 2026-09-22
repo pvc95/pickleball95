@@ -71,3 +71,18 @@ Le pied de page de **toutes** les pages répète la raison sociale, l'adresse du
 Ne sont volontairement **pas** publiés : les adresses personnelles, professions et nationalités des dirigeants, qui figurent dans la déclaration en préfecture mais n'ont pas à être exposées en ligne. Le site ne mentionne que nom et fonction.
 
 À mettre à jour après chaque assemblée générale : la composition du bureau et la liste des administrateurs, dans les deux langues.
+
+## Le bandeau d'annonce du tournoi
+
+Un bandeau sarcelle est affiché au-dessus de l'en-tête sur `index.html` et `en/index.html`. Il annonce le K100 avec un compteur de jours et deux liens : la page du tournoi et la billetterie.
+
+**Il s'efface tout seul le 5 octobre 2026 à minuit.** Aucune intervention n'est nécessaire après le tournoi : le petit script le masque au-delà de cette date, et il est masqué par défaut dans le HTML, donc rien ne s'affiche si le script ne s'exécute pas.
+
+Pour le retirer définitivement, ou pour le réutiliser pour un autre évènement :
+
+- le bloc à supprimer est délimité par le commentaire `BANDEAU TEMPORAIRE` : l'élément `<aside class="alerte">` et le `<script>` qui le suit
+- à faire sur les **deux** pages d'accueil
+- pour une autre date, changer les deux `new Date(2026, 9, ...)` du script — attention, les mois commencent à 0 en JavaScript, donc `9` signifie octobre
+- les styles `.alerte` restent dans `styles.css` et peuvent servir à nouveau
+
+Après le tournoi, il reste à traiter séparément les deux pages `tournoi-k100.html` et `en/k100-tournament.html`, qui continueront d'annoncer des inscriptions ouvertes.

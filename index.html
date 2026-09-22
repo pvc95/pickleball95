@@ -176,6 +176,33 @@
 
 <a class="saut-contenu" href="#contenu">Aller au contenu</a>
 
+<!-- BANDEAU TEMPORAIRE — s'efface seul apres le 04/10/2026.
+     Pour le retirer definitivement : supprimer ce bloc <aside> et le <script> qui suit,
+     sur index.html et en/index.html. Voir la section dediee du README. -->
+<aside class="alerte" id="alerte-tournoi" hidden>
+  <div class="enveloppe alerte__interieur">
+    <p><strong>1<sup>er</sup> K100 de Cergy</strong> — dimanche 4 octobre 2026, inscriptions ouvertes. <span class="alerte__compte" id="alerte-compte" hidden></span></p>
+    <a class="alerte__lien" href="tournoi-k100.html">Le tournoi</a>
+    <a class="alerte__lien alerte__lien--fort" href="https://www.helloasso.com/associations/pickleball-vexin-centre/evenements/1er-k100-cergy-par-pickleball-vexin-centre" rel="noopener">S'inscrire</a>
+  </div>
+</aside>
+<script>
+(function () {
+  var fin = new Date(2026, 9, 5, 0, 0, 0);          // 5 octobre 2026, 00h00 : le bandeau disparait
+  var maintenant = new Date();
+  if (maintenant >= fin) return;                     // apres le tournoi : rien ne s'affiche
+  var jour = new Date(2026, 9, 4, 0, 0, 0);
+  var reste = Math.ceil((jour - maintenant) / 86400000);
+  var compte = document.getElementById('alerte-compte');
+  var texte = null;
+  if (reste > 1) texte = "J\u2212" + reste;
+  else if (reste === 1) texte = "C\u0027est demain";
+  else if (reste <= 0) texte = "C\u0027est aujourd\u0027hui";
+  if (texte) { compte.textContent = texte; compte.hidden = false; }
+  document.getElementById('alerte-tournoi').hidden = false;
+})();
+</script>
+
 <header class="entete">
   <div class="enveloppe entete__interieur">
     <a class="marque" href="index.html">

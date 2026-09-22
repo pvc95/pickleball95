@@ -686,3 +686,53 @@ p { margin: 0 0 1.15em; max-width: 62ch; }
   .nav a { font-size: 0.9rem; }
   .entete__droite { gap: 1.1rem; }
 }
+
+/* --- bandeau d'annonce temporaire (voir README pour le retrait) ------------ */
+
+.alerte {
+  background: #118baa;
+  color: #fff;
+  border-bottom: 2px solid var(--nuit-fonce);
+  font-size: 0.95rem;
+}
+.alerte[hidden] { display: none; }
+.alerte__interieur {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.1rem;
+  padding-block: 0.7rem;
+}
+.alerte p { margin: 0; max-width: none; flex: 1 1 18rem; }
+.alerte strong { font-family: var(--display); font-weight: 800; letter-spacing: -0.01em; }
+.alerte__compte {
+  font-family: var(--data);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 0.12rem 0.45rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.alerte__lien {
+  flex: 0 0 auto;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.45);
+  padding-bottom: 1px;
+}
+.alerte__lien:hover { color: var(--balle); border-bottom-color: var(--balle); }
+.alerte__lien--fort {
+  background: var(--balle);
+  color: var(--encre);
+  border: 2px solid var(--nuit-fonce);
+  border-radius: var(--rayon);
+  padding: 0.34rem 0.75rem;
+}
+.alerte__lien--fort:hover { background: #fff; color: var(--encre); border-color: var(--nuit-fonce); }
+
+@media (max-width: 560px) {
+  .alerte { font-size: 0.9rem; }
+  .alerte__interieur { padding-block: 0.6rem; }
+}
