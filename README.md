@@ -10,6 +10,7 @@ Site statique bilingue français / anglais. Pas de build, pas de dépendance : d
 | `ou-jouer.html` | `en/where-to-play.html` | publiée |
 | `adherer.html` | `en/join.html` | publiée |
 | `le-club.html` | `en/the-club.html` | publiée |
+| `qui-sommes-nous.html` | `en/about-us.html` | publiée — identité juridique et mentions légales |
 | `tournoi-k100.html` | `en/k100-tournament.html` | publiée — inscriptions ouvertes sur HelloAsso |
 
 `styles.css` est partagé par les onze pages : une modification de style se répercute partout.
@@ -60,3 +61,13 @@ Chercher `TODO` dans les fichiers. Points ouverts :
 - `.nojekyll` — désactive le traitement Jekyll de GitHub Pages
 - `404.html` — page d'erreur, bilingue
 - `robots.txt`, `sitemap.xml` — référencement, avec les correspondances de langue
+
+## Mentions légales et transparence
+
+La page « Qui sommes-nous » porte l'énoncé de mission, la composition du bureau, l'identité juridique (RNA W953012473, siège 21 rue du Général Leclerc, 95750 Chars) et les mentions légales exigées par la LCEN.
+
+Le pied de page de **toutes** les pages répète la raison sociale, l'adresse du siège et le numéro RNA. C'est ce que contrôlent les évaluateurs de Google pour les programmes destinés aux associations.
+
+Ne sont volontairement **pas** publiés : les adresses personnelles, professions et nationalités des dirigeants, qui figurent dans la déclaration en préfecture mais n'ont pas à être exposées en ligne. Le site ne mentionne que nom et fonction.
+
+À mettre à jour après chaque assemblée générale : la composition du bureau et la liste des administrateurs, dans les deux langues.

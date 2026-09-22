@@ -669,3 +669,12 @@ p { margin: 0 0 1.15em; max-width: 62ch; }
   white-space: nowrap;
 }
 .fiche--clair td:last-child { color: var(--encre); font-weight: 500; }
+
+/* --- mention legale du pied de page --------------------------------------- */
+
+.pied__legal {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--gris);
+  margin-top: -0.4rem;
+}
