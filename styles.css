@@ -678,3 +678,11 @@ p { margin: 0 0 1.15em; max-width: 62ch; }
   color: var(--gris);
   margin-top: -0.4rem;
 }
+
+/* --- navigation a six entrees : resserrement progressif ------------------- */
+
+@media (min-width: 900px) and (max-width: 1150px) {
+  .nav ul { gap: 0.35rem 1.1rem; }
+  .nav a { font-size: 0.9rem; }
+  .entete__droite { gap: 1.1rem; }
+}
