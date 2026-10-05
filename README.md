@@ -95,3 +95,11 @@ Les icônes Facebook et Instagram de l'en-tête et du pied de page utilisent les
 Elles sont affichées en monochrome, ce que les deux chartes autorisent explicitement lorsque le support ne permet pas la couleur de marque — ici un en-tête bleu nuit. Les couleurs officielles, si besoin un jour : Facebook `#0866FF`, Instagram `#FF0069`.
 
 Pour les mettre à jour : `npm install simple-icons`, puis récupérer `siFacebook.path` et `siInstagram.path`.
+
+## Photographies
+
+`k100-2026-equipe.jpg` est la photo de groupe du tournoi 2026, redimensionnée à 1600 px et compressée. `og-k100-2026.jpg` en est un recadrage 1200 × 630 utilisé comme image de partage de la fiche tournoi.
+
+Avant de publier une photo où des personnes sont reconnaissables, s'assurer de leur accord — et de celui des parents pour les mineurs. Toute personne peut demander le retrait de son image : dans ce cas, remplacer le fichier ou retirer le bloc `<figure class="photo">` de la page concernée.
+
+Pour préparer une nouvelle photo : redimensionner à 1600 px de large, qualité JPEG 82, mode progressif, et vérifier que les métadonnées EXIF sont absentes (elles peuvent contenir une position GPS).

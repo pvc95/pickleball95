@@ -766,3 +766,30 @@ p { margin: 0 0 1.15em; max-width: 62ch; }
 @media (max-width: 560px) {
   .reseaux a { width: 1.85rem; height: 1.85rem; }
 }
+
+/* --- photographie de compte rendu ----------------------------------------- */
+
+.photo {
+  margin: 2.4rem 0 0;
+  border: 2px solid var(--encre);
+  border-radius: var(--rayon);
+  overflow: hidden;
+  background: var(--nuit-fonce);
+  max-width: 52rem;
+}
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.photo figcaption {
+  font-family: var(--data);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  padding: 0.75rem 1rem;
+  background: var(--craie);
+  border-top: 2px solid var(--encre);
+  color: var(--encre);
+}
+.bloc--nuit .photo { border-color: var(--nuit-clair); }
