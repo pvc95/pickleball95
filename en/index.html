@@ -159,33 +159,6 @@
 
 <a class="saut-contenu" href="#contenu">Skip to content</a>
 
-<!-- BANDEAU TEMPORAIRE — s'efface seul apres le 04/10/2026.
-     Pour le retirer definitivement : supprimer ce bloc <aside> et le <script> qui suit,
-     sur index.html et en/index.html. Voir la section dediee du README. -->
-<aside class="alerte" id="alerte-tournoi" hidden>
-  <div class="enveloppe alerte__interieur">
-    <p><strong>1st K100 in Cergy</strong> — Sunday 4 October 2026, registration open. <span class="alerte__compte" id="alerte-compte" hidden></span></p>
-    <a class="alerte__lien" href="k100-tournament.html">The tournament</a>
-    <a class="alerte__lien alerte__lien--fort" href="https://www.helloasso.com/associations/pickleball-vexin-centre/evenements/1er-k100-cergy-par-pickleball-vexin-centre" rel="noopener">Register</a>
-  </div>
-</aside>
-<script>
-(function () {
-  var fin = new Date(2026, 9, 5, 0, 0, 0);          // 5 octobre 2026, 00h00 : le bandeau disparait
-  var maintenant = new Date();
-  if (maintenant >= fin) return;                     // apres le tournoi : rien ne s'affiche
-  var jour = new Date(2026, 9, 4, 0, 0, 0);
-  var reste = Math.ceil((jour - maintenant) / 86400000);
-  var compte = document.getElementById('alerte-compte');
-  var texte = null;
-  if (reste > 1) texte = "D\u2212" + reste;
-  else if (reste === 1) texte = "Tomorrow";
-  else if (reste <= 0) texte = "Today";
-  if (texte) { compte.textContent = texte; compte.hidden = false; }
-  document.getElementById('alerte-tournoi').hidden = false;
-})();
-</script>
-
 <header class="entete">
   <div class="enveloppe entete__interieur">
     <a class="marque" href="index.html">
@@ -198,7 +171,7 @@
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="where-to-play.html">Where to play</a></li>
           <li><a href="join.html">Join</a></li>
-          <li><a href="k100-tournament.html">Tournament</a></li>
+          <li><a href="tournaments.html">Tournaments</a></li>
           <li><a href="the-club.html">The club</a></li>
           <li><a href="about-us.html">About us</a></li>
         </ul>
@@ -306,13 +279,12 @@
     <div class="enveloppe">
       <p class="sourcil">
         <svg class="balle" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><circle cx="12" cy="5.6" r="1.5"/><circle cx="17.3" cy="9" r="1.5"/><circle cx="17.3" cy="15" r="1.5"/><circle cx="12" cy="18.4" r="1.5"/><circle cx="6.7" cy="15" r="1.5"/><circle cx="6.7" cy="9" r="1.5"/><circle cx="12" cy="12" r="1.5"/></svg>
-        Sunday 4 October 2026 · Cergy
+        Competition
       </p>
-      <h2>The club is hosting its first tournament</h2>
-      <p class="intro">An FFT-sanctioned K100 at the Val-d'Oise departmental tennis centre. Men's and mixed doubles, 3.0 and 4.0 draws, €20 entry. Registration is open.</p>
+      <h2>The club hosted its first tournament</h2>
+      <p class="intro">An FFT-sanctioned K100 on 4 October 2026, at the Val-d'Oise departmental tennis centre in Cergy. No date is set for the next one yet, but there will be more.</p>
       <div class="rangee-boutons">
-        <a class="bouton" href="k100-tournament.html">All about the tournament</a>
-        <a class="bouton bouton--fantome" href="https://www.helloasso.com/associations/pickleball-vexin-centre/evenements/1er-k100-cergy-par-pickleball-vexin-centre" rel="noopener">Register</a>
+        <a class="bouton" href="tournaments.html">Club tournaments</a>
       </div>
     </div>
   </section>
@@ -347,7 +319,7 @@
         <ul>
           <li><a href="where-to-play.html">Where to play</a></li>
           <li><a href="join.html">Join</a></li>
-          <li><a href="k100-tournament.html">Tournament</a></li>
+          <li><a href="tournaments.html">Tournaments</a></li>
           <li><a href="the-club.html">The club</a></li>
         
           <li><a href="about-us.html">About us &amp; legal notice</a></li></ul>

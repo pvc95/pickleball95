@@ -11,7 +11,8 @@ Site statique bilingue français / anglais. Pas de build, pas de dépendance : d
 | `adherer.html` | `en/join.html` | publiée |
 | `le-club.html` | `en/the-club.html` | publiée |
 | `qui-sommes-nous.html` | `en/about-us.html` | publiée — identité juridique et mentions légales |
-| `tournoi-k100.html` | `en/k100-tournament.html` | publiée — inscriptions ouvertes sur HelloAsso |
+| `tournois.html` | `en/tournaments.html` | publiée — index : à venir / éditions passées |
+| `tournoi-k100.html` | `en/k100-tournament.html` | publiée — fiche archivée de l'édition 2026 |
 
 `styles.css` est partagé par les onze pages : une modification de style se répercute partout.
 
@@ -37,15 +38,15 @@ Tout est éditable sur github.com : ouvrir le fichier, cliquer sur le crayon, va
 
 Si vous ajoutez une page, pensez aux trois balises `<link rel="alternate" hreflang="…">` dans le `<head>`, aux liens du sélecteur de langue, et à `sitemap.xml`.
 
-## Le tournoi K100
+## Les tournois
 
-Les deux pages sont publiées depuis l'ouverture de la billetterie. Informations à tenir à jour si elles changent :
+`tournois.html` et `en/tournaments.html` sont les pages d'index, liées depuis le menu. Elles comportent deux sections : « à venir » et « éditions passées ».
 
-- lien HelloAsso, présent sur les deux pages tournoi **et** sur les deux pages d'accueil
-- tableaux et tarifs : le tableau « Tableaux et tarifs »
-- la règle FFT du tableau unique par jour, et le lien de création DUPR
+Pour annoncer un nouveau tournoi : remplacer le contenu de la section « à venir » par les informations de l'épreuve et le lien d'inscription, puis créer sa fiche sur le modèle de `tournoi-k100.html`.
 
-Après le 4 octobre 2026, il faudra soit archiver ces pages, soit les remplacer par un compte rendu. Ne pas les laisser annoncer des inscriptions closes.
+Après chaque édition : passer la fiche à l'imparfait, retirer les boutons d'inscription, supprimer le bloc `offers` des données structurées, et ajouter une entrée dans « éditions passées ». Remettre la section « à venir » sur « rien de prévu » si c'est le cas.
+
+Les fiches passées sont conservées en ligne et indexables : elles prouvent l'activité du club et servent de modèle pour l'édition suivante.
 
 ## Reste à compléter
 
